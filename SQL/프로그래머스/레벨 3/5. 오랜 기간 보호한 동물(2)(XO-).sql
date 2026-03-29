@@ -1,0 +1,17 @@
+-- [문제 푼 날짜]
+-- 1. 3월 28일 (X) => DATEDIFF 함수를 몰랐음
+-- 2. 3월 29일 (O)
+-- 3. 4월 6일 ()
+
+
+SELECT
+    A.ANIMAL_ID,
+    A.NAME
+FROM
+    ANIMAL_INS AS A
+INNER JOIN
+    ANIMAL_OUTS AS B
+    ON A.ANIMAL_ID = B.ANIMAL_ID
+ORDER BY
+    DATEDIFF(B.DATETIME, A.DATETIME) DESC
+LIMIT 2;

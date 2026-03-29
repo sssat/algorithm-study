@@ -1,0 +1,14 @@
+-- 내가 푼 풀이
+SELECT
+    DATETIME AS '시간'
+FROM
+    ANIMAL_INS
+ORDER BY
+    DATETIME ASC
+LIMIT 1;
+
+-- 정석풀이
+SELECT
+    MIN(DATETIME) AS '시간'
+FROM
+    ANIMAL_INS;
