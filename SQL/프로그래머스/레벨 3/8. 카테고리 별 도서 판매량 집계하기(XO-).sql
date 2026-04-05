@@ -1,0 +1,22 @@
+-- [문제 푼 날짜]
+-- 1. 3월 31일 (X) 
+-- 2. 4월 1일 (O)
+-- 3. 4월 8일 ()
+
+
+-- 일반적인 JOIN(INNER/LEFT/RIGHT)은 반드시 연결 조건이 필요하고, 보통 ON으로 쓴다.
+SELECT
+    A.CATEGORY,
+    SUM(B.SALES) AS TOTAL_SALES
+FROM
+    BOOK AS A
+INNER JOIN 
+    BOOK_SALES AS B
+    ON A.BOOK_ID = B.BOOK_ID
+WHERE
+    B.SALES_DATE >= '2022-01-01'
+    AND B.SALES_DATE <= '2022-01-31'
+GROUP BY
+    A.CATEGORY
+ORDER BY
+    A.CATEGORY ASC;
