@@ -33,11 +33,13 @@
 # 1. 3월 21일 (X) => 이런 문제는 개념을 이해한 후 코드는 왠만하면 외우는게 좋다. 특히 반복문 경계 조건 부분이 헷갈린다.
 # 2. 3월 22일 (X) => 코드가 직관적으로 받아들여지지 않아 성능은 똑같이 유지하면서 살짝 변형했다.
 # 3. 3월 29일 (X) => 아직 코드를 다 습득하지 못함
-# 4. 4월 7일 ()
+# 4. 4월 8일 (X) 18분 2초 => 처음에 sum() 함수로 했다가 시간 초과나서 다시 풂. 그 후 result < m 일때 if end == n - 1:를 안써서 틀림
+# 5. 4월 22일 ()
 
 
 n, m = map(int, input().split())
 arr = list(map(int, input().split()))
+
 interval_sum = 0
 count = 0
 start = 0
@@ -53,5 +55,31 @@ while start < n:
 
     interval_sum -= arr[start]
     start += 1
+
+print(count)
+
+
+# [4번째로 푼 풀이]
+n, m = map(int, input().split())
+arr = list(map(int, input().split()))
+
+count = 0
+start = 0
+end = 0
+result = arr[0]
+
+while start < n and end < n:
+    if result > m:
+        result -= arr[start]
+        start += 1
+    elif result < m:
+        if end == n - 1:
+            break
+        end += 1
+        result += arr[end]
+    else:
+        count += 1
+        result -= arr[start]
+        start += 1
 
 print(count)
