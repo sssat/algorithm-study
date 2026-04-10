@@ -37,16 +37,15 @@
 # [문제 푼 날짜]
 # 1. 3월 21일 (X) => 점화식을 못 찾음
 # 2. 3월 28일 (O) 9분 33초 OK
-# 3. 4월 6일 ()
+# 3. 4월 10일 (O) 3분 44초 OK
 
 
 import sys
 sys.setrecursionlimit(10000)
 
 def solution(n):
-    answer = 0
-    
     dp = [-1] * (n + 1)
+    
     def f(n):
         if dp[n] != -1:
             return dp[n]
@@ -60,5 +59,4 @@ def solution(n):
         dp[n] = (f(n - 1) + f(n - 2)) % 1234567
         return dp[n]
         
-    answer = f(n)
-    return answer
+    return f(n)

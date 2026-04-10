@@ -6,8 +6,9 @@
 -- 4. GROUP BY
 -- 5. HAVING
 -- 6. SELECT
--- 7. ORDER BY
--- 8. LIMIT
+-- 7. DISTINCT
+-- 8. ORDER BY
+-- 9. LIMIT
 
 -- 또한 SELECT 절에서 집계 함수가 아닌 칼럼은 GROUP BY에 넣어야 한다.
 -- 예를들어 이건 가능하다.
